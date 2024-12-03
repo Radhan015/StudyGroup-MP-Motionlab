@@ -1,5 +1,7 @@
 # tugas_week_2
 
+Tugas belum selesai bang maaf banget jadi saya kumpul seadanya saja karena dekat deadline
+
 A new Flutter project.
 
 ## Getting Started
