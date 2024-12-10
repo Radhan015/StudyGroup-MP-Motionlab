@@ -2,10 +2,8 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_week_2_motion/widgets/custom_text_field_widget.dart';
 
-import 'package:lottie/lottie.dart';
-
-class LoginPage extends StatelessWidget {
-  const LoginPage({super.key});
+class RegisterPage extends StatelessWidget {
+  const RegisterPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -18,31 +16,32 @@ class LoginPage extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Lottie.asset(
-                  "assets/Lottie/lottie_gshop.json",
-                  width: double.infinity,
-                  height: 280,
-                ),
-                const SizedBox(
-                  height: 16,
-                ),
                 const Text(
-                  "Welcome!",
+                  "Register",
                   style: TextStyle(
-                    fontSize: 22,
+                    fontSize: 24,
+                    fontWeight: FontWeight.bold,
                   ),
                 ),
                 const SizedBox(
-                  height: 7,
+                  height: 20,
                 ),
                 const Text(
-                  "Happy Shopping All",
+                  "Create your account for Happy Shopping",
                   style: TextStyle(
                     fontSize: 18,
+                    color: Colors.black45,
                   ),
                 ),
                 const SizedBox(
-                  height: 18,
+                  height: 54,
+                ),
+                CustomTextFieldWidget(
+                  hintText: 'Full Name',
+                  prefixIcon: const Icon(Icons.people),
+                ),
+                const SizedBox(
+                  height: 20,
                 ),
                 CustomTextFieldWidget(
                   hintText: 'Email',
@@ -58,6 +57,13 @@ class LoginPage extends StatelessWidget {
                 const SizedBox(
                   height: 20,
                 ),
+                CustomTextFieldWidget(
+                  hintText: 'Confirm Pasword',
+                  prefixIcon: const Icon(Icons.lock),
+                ),
+                const SizedBox(
+                  height: 42,
+                ),
                 ElevatedButton(
                   onPressed: () {},
                   style: ElevatedButton.styleFrom(
@@ -67,39 +73,38 @@ class LoginPage extends StatelessWidget {
                     ),
                     padding: const EdgeInsets.symmetric(
                       vertical: 16,
-                      horizontal: 155,
+                      horizontal: 149,
                     ),
                   ),
                   child: const Text(
-                    "Login",
+                    "Register",
                     style: TextStyle(
                       color: Colors.white,
                     ),
                   ),
                 ),
                 const SizedBox(
-                  height: 20,
+                  height: 15,
                 ),
                 RichText(
                   text: TextSpan(
-                      text: 'Don’t have an account? ',
+                      text: 'Already have an account? ',
                       style: const TextStyle(
                         fontSize: 14,
                         color: Colors.black,
                       ),
                       children: [
                         TextSpan(
-                          text: "Register",
-                          style: const TextStyle(
-                            color: Color.fromARGB(255, 17, 116, 68),
-                            fontWeight: FontWeight.bold,
-                          ),
-                          recognizer: TapGestureRecognizer()
-                          ..onTap = () {
-                            Navigator.pushNamed(context, '/register');
-                          }
-                        )
-                      ],),
+                            text: "Login",
+                            style: const TextStyle(
+                              color: Color.fromARGB(255, 17, 116, 68),
+                              fontWeight: FontWeight.bold,
+                            ),
+                            recognizer: TapGestureRecognizer()
+                              ..onTap = () {
+                                Navigator.pop(context);
+                              })
+                      ]),
                 ),
               ],
             ),

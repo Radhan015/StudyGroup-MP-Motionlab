@@ -3,10 +3,12 @@ import 'package:flutter/material.dart';
 class CustomTextFieldWidget extends StatelessWidget {
 
   String? hintText;
+  Widget? prefixIcon;
 
   CustomTextFieldWidget({
     super.key,
     this.hintText,
+    this.prefixIcon,
   });
 
   @override
@@ -15,6 +17,7 @@ class CustomTextFieldWidget extends StatelessWidget {
       decoration: InputDecoration(
         hintText: hintText,
         border: OutlineInputBorder(),
+        prefixIcon: prefixIcon,
       ),
     );
   }
